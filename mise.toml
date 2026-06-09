@@ -1,0 +1,14 @@
+# Clever Cloud's Linux base image already provides Erlang 27, but not Gleam, and
+# its `rebar` is v2 while Gleam needs rebar3 to build Erlang dependencies.
+# Mise installs both (Gleam as a precompiled binary, no compilation needed).
+[tools]
+gleam = "1.17.0"
+rebar = "3"
+
+[tasks.build]
+description = "Fetch dependencies from Hex and compile the application"
+run = "gleam deps download && gleam build"
+
+[tasks.run]
+description = "Start the Wisp web server (listens on 0.0.0.0:8080)"
+run = "gleam run"

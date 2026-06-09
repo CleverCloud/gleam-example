@@ -1,0 +1,17 @@
+name = "hello_world"
+version = "1.0.0"
+
+description = "A Wisp hello world deployed on Clever Cloud's Linux runtime"
+licences = ["MIT"]
+
+[dependencies]
+gleam_stdlib = ">= 0.70.0 and < 2.0.0"
+gleam_erlang = ">= 1.0.0 and < 2.0.0"
+# The Mist adapter ships inside the `wisp` package as the `wisp/wisp_mist`
+# module, so no extra dependency is needed for it.
+wisp = ">= 2.2.0 and < 3.0.0"
+mist = ">= 6.0.0 and < 7.0.0"
+
+[dev_dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+gleam_http = ">= 3.5.0 and < 5.0.0"
